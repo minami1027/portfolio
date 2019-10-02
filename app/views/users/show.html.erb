@@ -1,0 +1,42 @@
+<div class="container" style="padding-bottom: 20px;">
+  <div class="row">
+   <div class="profile-image">
+     <%= attachment_image_tag @user, :profile_image, :fill, 50, 50, class: "img-circle profile-thumb", fallback: "no_image.jpg"%>
+
+   </div>
+  </div>
+</div>
+
+ <div class="row">
+  <div class="col-xs-6">
+   <table>
+     <thead>
+  <div class="container">
+
+    <div class="profile-name">
+	   <h3 class="prof-n-kan">ニックネーム</h3>
+	     <%= @user.user_name %>
+    </div>
+    <div class="profile-email">
+    	<h3 class="prof-email">メールアドレス</h3>
+    	<%= @user.email %>
+    </div>
+    <div class="profile-phonenum">
+    	<h3 class="prof-phonenum">電話番号</h3>
+    	<%= @user.phone_number %>
+    </div>
+            </thead>
+     </table>
+    </div>
+
+    <div class="col-xs-6">
+     <table>
+      <thead>
+    <div class="prof-fav">
+    	<%= link_to "いいね一覧", favorites_path ,:style=>"color:black;"%>
+    </div>
+    <div class="prof-edit">
+    	<%= link_to "編集する", edit_user_path ,:style=>"color:black;"%>
+    </div>
+    <div class="prof-remove">
+    	<%= link_to "退会する",  user_remove_path ,:style=>"color:black;"%>

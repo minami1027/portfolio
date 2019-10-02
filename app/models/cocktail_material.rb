@@ -1,0 +1,2 @@
+class CocktailMaterial < ApplicationRecord
+end
