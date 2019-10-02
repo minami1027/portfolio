@@ -1,0 +1,2 @@
+class AdminItemsController < ApplicationController
+end

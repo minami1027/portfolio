@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category_id: 1
+  cocktail_name: MyString
+  cocktail_taste: MyString
+  cocktail_color: MyString
+  alcohol_content: MyString
+  category: MyString
+  cocktail_image_id: MyText
+
+two:
+  category_id: 1
+  cocktail_name: MyString
+  cocktail_taste: MyString
+  cocktail_color: MyString
+  alcohol_content: MyString
+  category: MyString
+  cocktail_image_id: MyText
