@@ -9,9 +9,9 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
 
       #追加カラム
       t.string :user_name, null: false
-      t.string :phone_number, null: false
-      t.text :profile_image_id, null: false
-      t.integer :is_delete, null: false
+      t.text :profile_image_id
+      t.integer :is_delete, null: false, default: 0
+      t.string :birth_date
 
       ## Recoverable
       t.string   :reset_password_token

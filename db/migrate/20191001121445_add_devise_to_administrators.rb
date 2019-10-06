@@ -8,7 +8,7 @@ class AddDeviseToAdministrators < ActiveRecord::Migration[5.2]
       t.string :encrypted_password, null: false, default: ""
 
       #追加カラム
-      t.string :name, null: false
+      t.string :name
 
       ## Recoverable
       t.string   :reset_password_token

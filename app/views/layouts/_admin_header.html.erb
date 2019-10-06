@@ -1,0 +1,17 @@
+<body>
+     <header class="navbar navbar-inverse">
+  <div class="container">
+    <nav class='nav navbar-nav navbar-left' >
+    <%= link_to admin_path do%>
+    <h2>マスターメニュー</h2>
+    <% end %>
+    </nav>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to " Top ", admin_path ,:style=>"color:white;" %></li>
+          <li><%= link_to " logout ", destroy_administrator_session_path, method: :delete ,:style=>"color:white;" %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+</body>

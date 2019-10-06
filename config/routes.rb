@@ -24,4 +24,43 @@ Rails.application.routes.draw do
 
   ###ルートURL
   root 'items#index'
+  ###エンドユーザー###
+  #UsersController
+  resources :users, only: [:show, :edit, :update] do
+    collection do
+      get 'warn'
+      patch 'unsubscribe'
+    end
+
+  #ItemsController
+  resources :items, only: :show
+  get '/items/category/:category_id', to: 'items#category', as: :category
+  end
+
+  #FavoritesController
+  resources :favorites, only: [:index, :create, :destroy]
+
+    #ReviewController
+    resources :reviews, only: [:edit, :update, :destroy ,:new ,:create]
+
+  ###管理者###
+  #Admin::UsersController
+  get '/admin', to: 'admin/users#top' #管理者側のルートURL
+
+  #Admin::End_UsersController
+  namespace :admin do
+    resources :end_users, only: [:index, :show, :edit, :update]
+    patch '/end_users/remove/:id', to: 'end_users#remove', as: :remove ##設計と違う箇所
+  end
+
+  #Admin::CategoriesController
+  namespace :admin do
+    resources :categories, only: [:index, :new, :create, :edit, :update, :destroy]
+  end
+
+  #Admin::ItemsController
+  namespace :admin do
+    resources :items, only: [:index, :show, :edit, :update, :new, :create]
+    put 'items/stop/:id', to: 'items#stop', as: :stop
+  end
 end
