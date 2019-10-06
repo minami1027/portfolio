@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
+    before_action :set_search
     def set_search
-        @search = Item.where(listing_stop: 0).ransack(params[:q])
+        @search = Item.ransack(params[:q])
         @items = @search.result.page(params[:page])
     end
 

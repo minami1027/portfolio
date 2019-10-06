@@ -1,4 +1,4 @@
-class UsersSessionsController < ApplicationController
+class Users::SessionsController < Devise::SessionsController
     before_action :logical_delete_user, only: :create
     # before_action :configure_sign_in_params, only: [:create]
 
