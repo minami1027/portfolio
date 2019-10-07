@@ -1,7 +1,7 @@
 class CreateMaterials < ActiveRecord::Migration[5.2]
   def change
     create_table :materials do |t|
-      t.integer :material_id, null: false
+      t.integer :item_id
       t.string :material, null: false
 
       t.timestamps

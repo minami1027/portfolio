@@ -31,11 +31,11 @@ Rails.application.routes.draw do
       get 'warn'
       patch 'unsubscribe'
     end
+   end
 
   #ItemsController
   resources :items, only: :show
   get '/items/category/:category_id', to: 'items#category', as: :category
-  end
 
   #FavoritesController
   resources :favorites, only: [:index, :create, :destroy]

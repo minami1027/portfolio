@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+   <div class="profile-image">
+     <%= attachment_image_tag @user, :profile_image, :fill, 50, 50, class: "img-circle profile-thumb", fallback: "no_image.jpg"%>
+
+   </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="profile-name">
+	   <h3 class="prof-n-kan">名前</h3>
+	     <%= @user_name %>
+    </div>
+    <div class="profile-email">
+    	<h3 class="prof-email">メールアドレス</h3>
+    	<%= @user.email %>
+    </div>
+    <div class="prof-edit">
+    	<%= link_to "編集する", edit_admin_end_user_path(@user.id), class:'btn btn-danger' %>
+    </div>
+    <div class="prof-remove">
+    	<%= link_to "ユーザーの退会処理を行う", admin_remove_path(@user.id), method: :patch, class:'btn btn-danger' %>
+    </div>
+
+   </div>
+</div>

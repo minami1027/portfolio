@@ -29,14 +29,6 @@ ActiveRecord::Schema.define(version: 2019_10_01_121445) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "cocktail_materials", force: :cascade do |t|
-    t.integer "material_id", null: false
-    t.integer "item_id", null: false
-    t.string "amount", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "item_id", null: false
@@ -50,14 +42,14 @@ ActiveRecord::Schema.define(version: 2019_10_01_121445) do
     t.string "cocktail_taste", null: false
     t.string "cocktail_color", null: false
     t.string "alcohol_content", null: false
-    t.string "category"
     t.text "cocktail_image_id"
+    t.string "manufacturing_method", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "materials", force: :cascade do |t|
-    t.integer "material_id", null: false
+    t.integer "item_id"
     t.string "material", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

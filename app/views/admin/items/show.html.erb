@@ -1,0 +1,26 @@
+<div class="col-md-3 category-padding">
+    <%= render 'layouts/category' %>
+</div>
+
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>ア</th>
+            <th>商</th>
+            <th>価</th>
+            <th>在</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        <% @items.each do |item| %>
+            <tr>
+                <td><%= item.category.name%></td>
+                <td><%= item.item_name%></td>
+                <td><%= link_to "カクテル詳細", admin_item_path(item) %></td>
+            </tr>
+        <% end %>
+    </table>
+</div>
+
+<%= paginate @items %>
