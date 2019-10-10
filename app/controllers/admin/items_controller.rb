@@ -4,8 +4,12 @@ class Admin::ItemsController < ApplicationController
     PER = 20
 
     def index
-        @items = Item.where(listing_stop: 0).page(params[:page]).per(PER)
+        # @items = Item.where(listing_stop: 0).page(params[:page]).per(PER)
+        @items = Item.all
+    end
 
+    def Category
+        @item = Item.find(params[:id])
     end
 
     def show
