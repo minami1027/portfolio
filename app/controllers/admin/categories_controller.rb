@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # class Admin::CategoriesController < ApplicationController
 #     def index
 #         @category = category.all
@@ -42,3 +43,5 @@
 #         end
 #     end
 # end
+=======
+>>>>>>> 34d5496248d1d3243538b6347518517372200f39

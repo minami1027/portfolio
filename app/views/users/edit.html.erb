@@ -14,6 +14,12 @@
   <%= f.text_field :user_name %>  <br>
   <h4>メールアドレス</h4>
   <%= f.text_field :email %><br>
+
+  <div class="form-group">
+    <%= f.label :introduction, "自己紹介文" %>
+    <%= f.text_field :introduction, class:"自己紹介文" %>
+  </div>
+
   <h4>パスワード</h4>
   <div class="field">
     <%= f.label :password %>

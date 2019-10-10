@@ -1,12 +1,17 @@
 class Admin::ItemsController < ApplicationController
     before_action :authenticate_administrator!
 
-    PER = 20
+    #PER = 20
 
     def index
+<<<<<<< HEAD
         # @items = Item.where(listing_stop: 0).page(params[:page]).per(PER)
         @items = Item.all
     end
+=======
+#       @items = Item.where(listing_stop: 0).page(params[:page]).per(PER)
+        @items = Item.all
+>>>>>>> 34d5496248d1d3243538b6347518517372200f39
 
     def Category
         @item = Item.find(params[:id])
@@ -14,6 +19,8 @@ class Admin::ItemsController < ApplicationController
 
     def show
         @item = Item.find(params[:id])
+        @categories = Category.all
+        # @material = Material.find(params[:id])
     end
 
     def new
@@ -24,11 +31,18 @@ class Admin::ItemsController < ApplicationController
 
     def create
         @item = Item.new(item_params)
-        if @item.save
-            redirect_to admin_items_url
+        if @item.save!
+            redirect_to admin_item_url(@item)
         else
             render 'new'
         end
+
+ #       if @material.save
+ #           redirect_to admin_item_url(@item)
+ #       else
+ #           render 'new'
+ #       end
+
     end
 
     def edit
@@ -55,8 +69,8 @@ class Admin::ItemsController < ApplicationController
 
     def item_params
         params.require(:item).permit(
-                :category_id, :cocktail_name, :cocktail_taste, :cocktail_color, :category_id, :alcohol_content, :cocktail_image_id, :alcohol_content, :manufacturing_method,
-                    materials_attributes: [:id, :_destroy]
+                :category_id, :cocktail_name, :cocktail_taste, :cocktail_color,:cocktail_introduction, :category_id, :alcohol_content, :cocktail_image, :alcohol_content, :manufacturing_method,
+                    materials_attributes: [:id, :material, :_destroy]
                 )
     end
 end

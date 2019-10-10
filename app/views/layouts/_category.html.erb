@@ -3,16 +3,9 @@
         <span class="logo-text">Cotegory</span>
     </div>
     <div class="category-group">
-        <p class="category"><%= link_to "Beer", category_path("Beer"), class:"category-link" %></p><br>
-        <p class="category"><%= link_to "Wine", category_path("Wine"), class:"category-link" %></p><br>
-        <p class="category"><%= link_to "Gin", category_path("Gin"), class:"category-link" %></p><br>
-        <p class="category"><%= link_to "Vodka", category_path("Vodka"), class:"category-link" %></p><br>
-        <p class="category"><%= link_to "Rum", category_path("Rum"), class:"category-link" %></p><br>
-        <p class="category"><%= link_to "Tequila", category_path("Tequila"), class:"category-link" %></p><br>
-        <p class="category"><%= link_to "Wisky", category_path("Wisky"), class:"category-link" %></p><br>
-        <p class="category"><%= link_to "Jananese", category_path("Jananese"), class:"category-link" %></p><br>
-        <p class="category"><%= link_to "Liqueur", category_path("Liqueur"), class:"category-link" %></p><br>
-        <p class="category"><%= link_to "other", category_path("other"), class:"category-link" %></p><br>
+        <% Category.all.each do |category| %>
+            <p class="category"><%= link_to category.category_name, admin_category_path(category), class:"category-link" %></p><br>
+        <% end %>
     </div>
 </div>
 

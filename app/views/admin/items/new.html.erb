@@ -1,6 +1,8 @@
 <div class="row">
     <h1>カクテル追加</h1>
-
+<% @item.errors.full_messages.each do |mes | %>
+<%= mes%>
+<% end %>
     <%= form_for(@item, url: admin_items_path) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
 
@@ -31,6 +33,10 @@
 		<div class="form-group">
             <%= f.label :alcohol_content, "度数" %>
             <%= f.text_field :alcohol_content, class:"form-control" %>
+
+        <div class="form-group">
+            <%= f.label :cocktail_introduction, "カクテルの説明" %>
+            <%= f.text_field :cocktail_introduction, class:"form-control" %>
 
         <div class="form-group">
 			<%= f.label :category, "カテゴリー" %>

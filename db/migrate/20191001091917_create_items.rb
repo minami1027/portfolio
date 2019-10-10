@@ -7,7 +7,9 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :cocktail_color, null: false
       t.string :alcohol_content, null: false
       t.text :cocktail_image_id
+      t.text :cocktail_introduction
       t.string :manufacturing_method, null: false
+      t.integer :listing_stop
 
       t.timestamps
     end
