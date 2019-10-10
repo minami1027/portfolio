@@ -43,7 +43,9 @@ ActiveRecord::Schema.define(version: 2019_10_01_121445) do
     t.string "cocktail_color", null: false
     t.string "alcohol_content", null: false
     t.text "cocktail_image_id"
+    t.text "cocktail_introduction"
     t.string "manufacturing_method", null: false
+    t.integer "listing_stop"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -66,6 +68,7 @@ ActiveRecord::Schema.define(version: 2019_10_01_121445) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.text "introduction"
     t.string "user_name", null: false
     t.text "profile_image_id"
     t.integer "is_delete", default: 0, null: false
