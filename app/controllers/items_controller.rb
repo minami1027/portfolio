@@ -2,8 +2,8 @@ class ItemsController < ApplicationController
     PER = 5
 
     def index
-    #    @items = Item.all.
-    @item_ranks = Item.find(Favorite.group(:item_id).order('count(item_id) desc').limit(5).pluck(:item_id))
+        #@items = Item.all.
+        @item_ranks = Item.find(Favorite.group(:item_id).order('count(item_id) desc').limit(5).pluck(:item_id))
     end
 
     def show
@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
 
     def category
         @category = params[:category_id]
-        @category = Item.where(category: params[:category_id]).where(listing_stop: 0).page(params[:page]).per(PER)
+        @category = Item.where(category_id: params[:category_id]).where(listing_stop: 0).page(params[:page]).per(PER)
     end
 
   def check_login

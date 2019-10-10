@@ -8,6 +8,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
       t.string :encrypted_password, null: false, default: ""
 
       #追加カラム
+      t.text :introduction
       t.string :user_name, null: false
       t.text :profile_image_id
       t.integer :is_delete, null: false, default: 0
