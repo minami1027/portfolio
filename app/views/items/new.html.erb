@@ -1,0 +1,75 @@
+<div class="row">
+    <h1>カクテル追加</h1>
+<% @item.errors.full_messages.each do |mes | %>
+<%= mes%>
+<% end %>
+    <%= form_for(@item, url: items_path) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <div class="form-group">
+            <%= f.attachment_field :cocktail_image %>
+        </div>
+
+		<div class="form-group">
+			<%= f.label :cocktail_name, "カクテル名" %>
+			<%= f.text_field :cocktail_name, class:"form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :cocktail_taste, "テイスト" %>
+			<%= f.text_field :cocktail_taste, class:"form-control" %>
+		</div>
+
+
+		<div class="form-group">
+            <%= f.label :cocktail_color, "カラー" %>
+            <%= f.text_field :cocktail_color, class:"form-control" %>
+        </div>
+
+		<div class="form-group">
+            <%= f.label :manufacturing_method, "製造方法" %>
+            <%= f.text_field :manufacturing_method, class:"form-control" %>
+        </div>
+
+		<div class="form-group">
+            <%= f.label :alcohol_content, "度数" %>
+            <%= f.text_field :alcohol_content, class:"form-control" %>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :cocktail_introduction, "カクテルの説明" %>
+            <%= f.text_field :cocktail_introduction, class:"form-control" %>
+        </div>
+
+        <div class="form-group">
+			<%= f.label :category, "カテゴリー" %>
+            <% Category.all.each do |category| %>
+            <label><%= f.radio_button :category_id, category.id %> <%= category.category_name %></label>
+            <% end %>
+		</div>
+
+        <h3>材料</h3>
+        <div class="materials">
+            <%= f.fields_for :materials do |material| %>
+                <%= render 'material_fields', f: material %>
+            <% end %>
+            <div class="links">
+                <%= link_to_add_association '材料を追加', f, :materials, class:"btn btn-primary" %>
+            </div>
+        </div>
+
+        <h3>作り方</h3>
+        <div class="howtomakes">
+            <%= f.fields_for :howtomakes do |howtomake| %>
+                <%= render 'howtomake_fields', f: howtomake %>
+            <% end %>
+            <div class="links">
+                <%= link_to_add_association '手順を追加', f, :howtomakes, class:"btn btn-primary" %>
+            </div>
+        </div>
+
+        <div class="item-add-to">
+        <%= f.submit 'カクテルを追加', class:"btn btn-primary" %>
+        </div>
+	<% end %>
+</div>

@@ -1,31 +1,30 @@
 class Admin::ItemsController < ApplicationController
     before_action :authenticate_administrator!
 
-    #PER = 20
+    PER = 20
 
     def index
-<<<<<<< HEAD
         # @items = Item.where(listing_stop: 0).page(params[:page]).per(PER)
-        @items = Item.all
-    end
-=======
-#       @items = Item.where(listing_stop: 0).page(params[:page]).per(PER)
-        @items = Item.all
->>>>>>> 34d5496248d1d3243538b6347518517372200f39
+        # @items = Item.all
+        @item_ranks = Item.find(Favorite.group(:item_id).order('count(item_id) desc').limit(5).pluck(:item_id))
 
-    def Category
-        @item = Item.find(params[:id])
+    end
+
+    def category
+        @category_items = Item.where(category_id: params[:category_id])
+        @category = Item.where(category_id: params[:category_id]).where(listing_stop: 0).page(params[:page]).per(PER)
     end
 
     def show
         @item = Item.find(params[:id])
         @categories = Category.all
-        # @material = Material.find(params[:id])
+        # render 'items/show'
     end
 
     def new
         @item = Item.new
         @material = @item.materials.build
+        @howtomake = @item.howtomakes.build
         @categories = Category.all
     end
 
@@ -36,12 +35,6 @@ class Admin::ItemsController < ApplicationController
         else
             render 'new'
         end
-
- #       if @material.save
- #           redirect_to admin_item_url(@item)
- #       else
- #           render 'new'
- #       end
 
     end
 
@@ -69,8 +62,10 @@ class Admin::ItemsController < ApplicationController
 
     def item_params
         params.require(:item).permit(
-                :category_id, :cocktail_name, :cocktail_taste, :cocktail_color,:cocktail_introduction, :category_id, :alcohol_content, :cocktail_image, :alcohol_content, :manufacturing_method,
-                    materials_attributes: [:id, :material, :_destroy]
+                :category_id, :cocktail_name, :cocktail_taste, :cocktail_color,:cocktail_introduction,
+                :alcohol_content, :cocktail_image, :manufacturing_method,
+                    materials_attributes: [:id, :material, :_destroy],
+                     howtomakes_attributes: [:id, :howtomake, :_destroy]
                 )
     end
 end

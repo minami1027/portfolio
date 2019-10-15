@@ -1,8 +1,7 @@
 <div class="container" style="padding-bottom: 20px;">
   <div class="row">
    <div class="profile-image">
-     <%= attachment_image_tag @user, :profile_image, :fill, 50, 50, class: "img-circle profile-thumb", fallback: "no_image.jpg"%>
-
+     <%= attachment_image_tag @user, :profile_image, :fill, 50, 50, class: "img-circle profile-thumb", fallback: "no_image.jpg", size:'200x200'%>
    </div>
   </div>
 </div>
@@ -36,7 +35,7 @@
     	<%= link_to "いいね一覧", favorites_path ,:style=>"color:black;"%>
     </div>
     <div class="prof-edit">
-    	<%= link_to "編集する", edit_user_path ,:style=>"color:black;"%>
+    	<%= link_to "マイページ編集", edit_user_path ,:style=>"color:black;"%>
     </div>
     <div class="prof-remove">
     	<%= link_to "退会する",  user_remove_path ,:style=>"color:black;"%>

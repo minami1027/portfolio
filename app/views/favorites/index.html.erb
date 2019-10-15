@@ -1,0 +1,19 @@
+<div class="row">
+    <h3>いいね一覧</h3>
+    <hr>
+    <% current_user.favorites.each do |fav| %>
+        <div class="col-md-offset-2">
+            <div class="row  favorite-border-item">
+                <div class="col-md-5">
+                    <%= attachment_image_tag fav.item, :cocktail_image,
+                        :fill, 170, 170,  fallback: "no_image.jpg", size:'170x170' %>
+                </div>
+
+                <div class="col-md-5">
+                    <p class="index-font"><%= fav.item.cocktail_name %></p>
+                    <p class="index-font"><%= link_to '詳細を見る', item_path(fav.item) %>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>

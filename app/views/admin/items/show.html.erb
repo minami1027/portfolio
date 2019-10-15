@@ -1,39 +1,56 @@
-<div class="col-md-3 category-padding">
-    <%= render 'layouts/category', categories: @categories %>
-</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <%= render 'layouts/category', categories: @categories, roll: 'admin' %>
+        </div>
 
-<%# <% @items.each do |item| %>
-<%#= item.cocktail_name %>
-<%# end %>
+        <div class="col-lg-5">
+            <%= attachment_image_tag @item, :cocktail_image, fallback: "no_image.jpg", size:'450x450'  %>
+        </div>
 
-<div class="row">
-    <div class="col-md-offset-2 col-md-4">
-        <h4><small>カクテル名</small> <%= @item.cocktail_name %></h4>
-    </div>
-
-    <div class="col-md-4">
-        <%= attachment_image_tag @item, :cocktail_image, fallback: "no_image.jpg", size:'300x300'  %>
-    </div>
-
-    <div class="col-md-2">
-        <div>
+        <div class="col-lg-5">
+            <h2>カクテル名:<%= @item.cocktail_name %></h2>
+            <h2>度数:<%= @item.alcohol_content %></h2>
+            <h2>味:<%= @item.cocktail_name %></h2>
+            <h2>色:<%= @item.cocktail_color %></h2>
+            <h2>製法:<%= @item.manufacturing_method %></h2>
             <%= link_to '編集', edit_admin_item_path, class:"btn btn-primary" %>
             <%= link_to '削除', admin_stop_path(@item), method: :put, class:"btn btn-primary" %>
         </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="col-md-8 col-md-offset-2">
-        <h3>材料</h3>
-            <table class="table fix-table">
-                <% @item.materials.each do |material| %>
-                    <tr>
-                        <td class="admin-item-show-td">
-                        <td><%= material.material %></td>
-                    </tr>
-                <% end %>
-            </table>
+    <div class="row">
+        <div class="col-md-5">
+            <h3>材料</h3>
+                <table class="table fix-table">
+                    <% @item.materials.each do |material| %>
+                        <tr>
+                            <td class="admin-item-show-td">
+                            <td><%= material.material %></td>
+                        </tr>
+                    <% end %>
+                </table>
+        </div>
+
+        <div class="col-md-5">
+            <h3>作り方</h3>
+                <table class="table fix-table">
+                    <% @item.howtomakes.each do |howtomake| %>
+                        <tr>
+                            <td class="admin-item-show-td">
+                            <td><%= howtomake.howtomake %></td>
+                        </tr>
+                    <% end %>
+                </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10">
+            <h3>カクテル説明</h3>
+                <table class="table fix-table">
+                <%= @item.cocktail_introduction %></h4>
+                </table>
+        </div>
     </div>
 </div>
-

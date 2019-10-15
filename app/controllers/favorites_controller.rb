@@ -1,4 +1,7 @@
 class FavoritesController < ApplicationController
+    before_action :logical_delete_user
+    before_action :authenticate_user!
+
     def index
     end
 
@@ -19,4 +22,5 @@ class FavoritesController < ApplicationController
             format.js { @item }
         end
     end
+
 end

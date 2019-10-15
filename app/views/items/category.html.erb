@@ -1,3 +1,23 @@
-    <div class="col-md-3 category-padding">
-        <%= render 'layouts/category' %>
+<div class="row background-category <%= @category %>">
+    <div class="col-md-2">
+    <%= render 'layouts/category', roll: 'users'%>
     </div>
+
+    <div class="col-md-10">
+    <h1><%= Category.find(params[:category_id])[:category_name] %>'s recommend</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+    <% @category_items.each do |category_item| %>
+        <div class="row"></div>
+            <div class="col-md-4">
+                <%= attachment_image_tag category_item, :cocktail_image, :fill, 150, 150, fallback: "no_image.jpg", size:'150x150'  %> <br>
+                <p class="index-font category-font"><%= category_item.cocktail_name%></p>
+                <p class="index-font category-font"><%= link_to "詳細を見る", item_path(category_item.id) %></p>
+            </div>
+        </div>
+    <% end %>
+    </div>
+  <%= paginate @category %>
+</div>

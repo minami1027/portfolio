@@ -53,15 +53,10 @@ Rails.application.routes.draw do
     patch '/end_users/remove/:id', to: 'end_users#remove', as: :remove ##設計と違う箇所
   end
 
-    #Admin::CategoriesController
-    namespace :admin do
-      resources :categories
-    end
-
   #Admin::ItemsController
   namespace :admin do
     resources :items, only: [:index, :show, :edit, :update, :new, :create]
     put 'items/stop/:id', to: 'items#stop', as: :stop
-    get'items/category/:category_id',to: 'items#category', as: :item_category
+    get'items/category/:category_id',to: 'items#category', as: :category
   end
 end

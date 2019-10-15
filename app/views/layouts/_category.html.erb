@@ -3,8 +3,24 @@
         <span class="logo-text">Cotegory</span>
     </div>
     <div class="category-group">
-        <% Category.all.each do |category| %>
-            <p class="category"><%= link_to category.category_name, admin_category_path(category), class:"category-link" %></p><br>
+        <% if roll == 'admin' %>
+            <p class="category"><%= link_to "ビールベース", admin_category_path(1), class:"category-link" %></p><br>
+            <p class="category"><%= link_to "ワインベース", admin_category_path(2), class:"category-link" %></p><br>
+            <p class="category"><%= link_to "焼酎・日本酒ベース", admin_category_path(3), class:"category-link" %></p><br>
+            <p class="category"><%= link_to "リキュールベース", admin_category_path(4), class:"category-link" %></p><br>
+            <p class="category"><%= link_to "ジンベース", admin_category_path(5), class:"category-link" %></p><br>
+            <p class="category"><%= link_to "ウォッカベース", admin_category_path(6), class:"category-link" %></p><br>
+            <p class="category"><%= link_to "ラムベース", admin_category_path(7), class:"category-link" %></p><br>
+            <p class="category"><%= link_to "テキーラベース", admin_category_path(8), class:"category-link" %></p><br>
+        <% else %>
+            <p class="category"><%= link_to "ビールベース", category_path(1), class:"category-link" %></p><br>
+            <p class="category"><%= link_to "ワインベース", category_path(2), class:"category-link" %></p><br>
+            <p class="category"><%= link_to "焼酎・日本酒ベース", category_path(3), class:"category-link" %></p><br>
+            <p class="category"><%= link_to "リキュールベース", category_path(4), class:"category-link" %></p><br>
+            <p class="category"><%= link_to "ジンベース", category_path(5), class:"category-link" %></p><br>
+            <p class="category"><%= link_to "ウォッカベース", category_path(6), class:"category-link" %></p><br>
+            <p class="category"><%= link_to "ラムベース", category_path(7), class:"category-link" %></p><br>
+            <p class="category"><%= link_to "テキーラベース", category_path(8), class:"category-link" %></p><br>
         <% end %>
     </div>
 </div>

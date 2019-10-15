@@ -1,0 +1,10 @@
+Category.seed_once(:id,
+    {id: 1, category_name:'ビール'},
+    {id: 2, category_name:'ワイン'},
+    {id: 3, category_name:'焼酎・日本酒'},
+    {id: 4, category_name:'リキュール'},
+    {id: 5, category_name:'ジン'},
+    {id: 6, category_name:'ウォッカ'},
+    {id: 7, category_name:'ラム'},
+    {id: 8, category_name:'テキーラ'},
+)

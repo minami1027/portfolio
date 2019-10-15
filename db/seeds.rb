@@ -9,13 +9,12 @@
 Category.create([
     {category_name:'Beer'},
     {category_name:'Wine'},
+    {category_name:'Jananese'},
+    {category_name:'Liqueur'},
     {category_name:'Gin'},
     {category_name:'Vodka'},
     {category_name:'Rum'},
     {category_name:'Tequila'},
-    {category_name:'Wisky'},
-    {category_name:'Jananese'},
-    {category_name:'Liqueur'},
-    {category_name:'other'},
+
 
 ])
