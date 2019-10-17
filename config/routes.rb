@@ -40,8 +40,8 @@ Rails.application.routes.draw do
   #FavoritesController
   resources :favorites, only: [:index, :create, :destroy]
 
-    #ReviewController
-    resources :reviews, only: [:edit, :update, :destroy ,:new ,:create]
+  #ReviewController
+  resources :reviews, only: [:index, :edit, :update, :destroy ,:new ,:create]
 
   ###管理者###
   #Admin::UsersController

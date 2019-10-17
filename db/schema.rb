@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2019_10_14_095132) do
     t.text "cocktail_image_id"
     t.text "cocktail_introduction"
     t.string "manufacturing_method", null: false
-    t.integer "listing_stop"
+    t.integer "listing_stop", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

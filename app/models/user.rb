@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates :encrypted_password, presence: true
   # validates :is_delete, presence: true
 
-  # enum is_delete: {  exist: 0, remove: 1 }
+   enum is_delete: {  exist: 0, remove: 1 }
 
   attachment :profile_image
 

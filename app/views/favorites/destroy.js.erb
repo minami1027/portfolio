@@ -1,0 +1,2 @@
+$("#iine-<%= @item.id %>").html("<%= escape_javascript(render('favorites/favorites', item: @item)) %>");
+$('#iine_count').html('<h2><%= @item.favorites.count %> いいね</h2>');

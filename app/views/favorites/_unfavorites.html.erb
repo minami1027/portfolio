@@ -1,6 +1,7 @@
-<%= form_for(current_user.favorites.find_by(item_id: item.id), url: favorite_path(item), 
+<%= form_for(current_user.favorites.find_by(item_id: item.id), url: favorite_path(item),
                                     html: {method: :delete}, remote: true) do %>
     <%= button_tag type: 'submit', name: nil, class: 'btn btn-default' do %>
-        <%= content_tag :span, '', class:"glyphicon glyphicon-heart" %>
+        <%#= content_tag :span, '', class:"glyphicon glyphicon-heart" %>
+        <%= image_tag 'on2.png', :size =>'30x30' %>
     <% end %>
 <% end %>

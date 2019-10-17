@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :logical_delete_user
+    before_action :logical_delete_user, only: [:show, :edit, :update, :unsubscribe]
     before_action :authenticate_user!
 
     def show
@@ -8,7 +8,7 @@ class UsersController < ApplicationController
        redirect_to user_path(@current_user)
    end
     end
- 
+
     def edit
         @user = User.find(params[:id])
        unless @user.id == current_user.id
@@ -38,6 +38,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-      params.require(:user).permit(:user_name, :email, :profile_image ,:encrypted_password, :birth_date)
+      params.require(:user).permit(:user_name, :email, :profile_image ,:encrypted_password, :birth_date, :introduction)
   end
 end

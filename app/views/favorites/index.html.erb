@@ -12,6 +12,15 @@
                 <div class="col-md-5">
                     <p class="index-font"><%= fav.item.cocktail_name %></p>
                     <p class="index-font"><%= link_to '詳細を見る', item_path(fav.item) %>
+                    <div id="iine-<%= fav.item.id %>">
+                        <% #if user_signed_in? %>
+                        <% if current_user.iine?(fav.item) %>
+                            <%= render 'favorites/unfavorites', item: fav.item %>
+                        <% else %>
+                            <%= render 'favorites/favorites', item: fav.item %>
+                        <% end %>
+                    <%# end %>
+                    </div>
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.text :cocktail_image_id
       t.text :cocktail_introduction
       t.string :manufacturing_method, null: false
-      t.integer :listing_stop
+      t.integer :listing_stop, null: false, default: 0
 
       t.timestamps
     end

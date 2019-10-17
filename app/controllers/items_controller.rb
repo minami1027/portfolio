@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  # before_action :logical_delete_user
+
 
     PER = 5
 
@@ -18,12 +20,12 @@ class ItemsController < ApplicationController
         @categories = Category.all
     end
 
-    def new
-      @item = Item.new
-      @material = @item.materials.build
-      @howtomake = @item.howtomakes.build
-      @categories = Category.all
-    end
+    # def new
+    #   @item = Item.new
+    #   @material = @item.materials.build
+    #   @howtomake = @item.howtomakes.build
+    #   @categories = Category.all
+    # end
 
     # def create
     #   @item = Item.new(item_params)
@@ -33,7 +35,7 @@ class ItemsController < ApplicationController
     #       render 'new'
     #   end
 
-    end
+    # end
 
     # def edit
     #   @item = Item.find(params[:id])
@@ -69,4 +71,4 @@ class ItemsController < ApplicationController
               )
   end
 
-
+end

@@ -4,8 +4,9 @@ class Item < ApplicationRecord
     accepts_nested_attributes_for :materials, reject_if: :all_blank, allow_destroy: true
     accepts_nested_attributes_for :howtomakes, reject_if: :all_blank, allow_destroy: true
 
-    has_many :users, through: :favorites
+    has_many :users, through: :favorites, through: :reviews
     has_many :favorites
+    has_many :reviews
     belongs_to :category
 
 

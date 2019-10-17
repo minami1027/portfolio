@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <% @test.each do |row| %>
+                <div class="row">
+                    <div class="col-md-4">
+                        <%= attachment_image_tag row[1], :cocktail_image, :fill, 150, 150, fallback: "no_image.jpg", size:'150x150'  %> <br>
+                        <p class="index-font category-font"><%= row[0].review %></p>
+                        <p class="index-font category-font"><%= link_to "レシピを見る", item_path(row[0].item_id) %></p>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+  <%#= paginate @review %>
+
+  <p><%= @test.first.inspect %></p>
+</div>

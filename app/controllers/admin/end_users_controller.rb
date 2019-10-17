@@ -34,7 +34,7 @@ class Admin::EndUsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:user_name, :phone_number, :email, :profile_image)
+        params.require(:user).permit(:user_name, :email, :profile_image)
     end
 
     end
