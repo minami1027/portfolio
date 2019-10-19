@@ -1,8 +1,7 @@
 <div class="container">
     <div class="row">
-
         <div class="col-lg-6">
-            <%= attachment_image_tag @item, :cocktail_image, fallback: "no_image.jpg", size:'450x450'  %>
+            <%= attachment_image_tag @item, :cocktail_image, fallback: "no_image.jpg", size:'500x650'  %>
         </div>
 
         <div class="col-lg-6">
@@ -15,21 +14,22 @@
                 <h2><%= @item.favorites.count %> いいね</h2>
             </div>
             <div id="iine-<%= @item.id %>">
-                <% #if user_signed_in? %>
-                <% if current_user.iine?(@item) %>
-                    <%= render 'favorites/unfavorites', item: @item %>
-                <% else %>
-                    <%= render 'favorites/favorites', item: @item %>
-                <% end %>
-            <%# end %>
+                <% if user_signed_in? %>
+                <div>
+                    <% if current_user && current_user.iine?(@item) %>
+                        <%= render 'favorites/unfavorites', item: @item %>
+                    <% else %>
+                        <%= render 'favorites/favorites', item: @item %>
+                    <% end %>
+                </div>
+            <% end %>
             </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-2"></div>
-            <p><%= link_to "レビューする", new_review_path << "?item_id=#{@item.id}", class:"category-link" %></p><br>
-        </div>
+            <h3><%= link_to "レビューする", new_review_path << "?item_id=#{@item.id}", class:"category-link" %></h3>
     </div>
 
     <div class="row">

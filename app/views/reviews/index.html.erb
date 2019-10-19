@@ -1,12 +1,24 @@
+<div class="notice">
+	<h1>コメント履歴一覧<h1>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8">
             <% @test.each do |row| %>
                 <div class="row">
                     <div class="col-md-4">
-                        <%= attachment_image_tag row[1], :cocktail_image, :fill, 150, 150, fallback: "no_image.jpg", size:'150x150'  %> <br>
-                        <p class="index-font category-font"><%= row[0].review %></p>
+                        <%= attachment_image_tag row[1], :cocktail_image, :fill, 150, 150, fallback: "no_image.jpg", size:'150x150'  %>
                         <p class="index-font category-font"><%= link_to "レシピを見る", item_path(row[0].item_id) %></p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <p class="index-font category-font"><%= row[0].review %></p>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <%= link_to '編集する', edit_review_path(row[0].id), class:"btn btn-primary" %>
+                        <%= link_to '削除する', review_path(row[0].id), class:"btn btn-primary", method: :delete %>
                     </div>
                 </div>
             <% end %>
@@ -14,5 +26,5 @@
     </div>
   <%#= paginate @review %>
 
-  <p><%= @test.first.inspect %></p>
+  <%#= @test.first.inspect %>
 </div>

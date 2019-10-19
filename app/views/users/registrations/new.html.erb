@@ -1,18 +1,19 @@
-<h2>Sign up</h2>
+<div class="form-wrapper">
+  <h1>新規会員登録</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="field">
-    <b><%= f.label :ニックネーム %><br /></b>
+    <div class="form-item">
+    <b><%= f.label :ニックネーム %></b>
     <%= f.text_field :user_name, autofocus: true, autocomplete: "user_name" %>
 
-  <div class="field">
-    <b><%= f.label :Eメール %><br /></b>
+  <div class="form-item">
+    <b><%= f.label :メールアドレス %><br /></b>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="birth_date_field">
+  <div class="form-item">
   <%= f.label :生年月日 %>
   <%= raw sprintf(
       f.date_select(
@@ -25,21 +26,21 @@
         '年 ', '月 ') + '日' %>
 </div>
 
-  <div class="field">
+  <div class="form-item">
     <b><%= f.label :パスワード %></b>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder:, "password(6文字以上)" %>
   </div>
 
-  <div class="field">
-    <b><%= f.label :パスワード確認 %><br /></b>
+  <div class="form-item">
+    <b><%= f.label :確認用パスワード %><br /></b>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="button-panel">
+    <%= f.submit "登録完了", class: "button" %>
   </div>
 <% end %>
 

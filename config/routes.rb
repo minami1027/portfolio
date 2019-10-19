@@ -16,6 +16,13 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/logout', to: 'devise/sessions#destroy', as: :logout
   end
+
+  #ReviewController
+  # resources :reviews, only: [:index, :edit, :update, :destroy ,:new ,:create]
+  resources :reviews, only: [:index, :edit, :update, :destroy, :new, :create]
+  #delete '/reviews/:review_id',to: 'reviews#destroy', as: 'hogeo'
+
+
   #get 'users/show'
   #get 'users/edit', to: 'users#edit'
   get 'users/:id/remove/', to: 'users#remove', as: 'user_remove'
@@ -40,8 +47,6 @@ Rails.application.routes.draw do
   #FavoritesController
   resources :favorites, only: [:index, :create, :destroy]
 
-  #ReviewController
-  resources :reviews, only: [:index, :edit, :update, :destroy ,:new ,:create]
 
   ###管理者###
   #Admin::UsersController

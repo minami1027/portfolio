@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   # before_action :logical_delete_user
-
-
+  before_action :authenticate_user!
     PER = 5
 
     def index

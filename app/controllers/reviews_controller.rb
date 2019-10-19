@@ -40,7 +40,7 @@ class ReviewsController < ApplicationController
     def update
       @review = Review.find(params[:id])
       if @review.update_attributes(review_params)
-          redirect_to review_url
+          redirect_to reviews_path
       else
           render 'edit'
       end
@@ -48,7 +48,15 @@ class ReviewsController < ApplicationController
 
     def destroy
       @review = Review.find(params[:id])
-      redirect_to review_url
+      @review.destroy
+      redirect_to reviews_url
+    end
+
+    private
+
+    def review_params
+        params.require(:review).permit(:review, :item_id).merge(item_id: 1)
+        #         reviews_attributes: [:id, :review]
     end
 
 end

@@ -1,38 +1,36 @@
 <table class="table">
  <thead>
-  <tr>
-   <th>マスターメニュー 一覧</th>
-  </tr>
+    <h1>マスターメニュー 一覧</h1>
+  </thead>
 </table>
 
-   <div class="row">
-    <div class="col-xs-4">
-     <table>
+<div class="row">
+  <div class="col-xs-4">
+    <table>
       <thead>
        <tr>
-        <th><h3><%= link_to "TOPページ", admin_items_path %></h3></th>
-       </tr>
-      </thead>
-     </table>
-    </div>
+       <th><h2><%= link_to "TOPページ", admin_items_path, :style => "color:black;" %></h2></th>
+      </tr>
+     </thead>
+    </table>
+</div>
 
-    <div class="col-xs-4">
-     <table>
-      <thead>
-       <tr>
-        <th><h3><%= link_to "カクテル追加", new_admin_item_path %></h3></th>
-        </tr>
-      </thead>
-     </table>
-    </div>
+<div class="col-xs-4">
+  <table>
+    <thead>
+      <tr>
+        <th><h2><%= link_to "カクテル追加", new_admin_item_path, :style => "color:black;" %></h2></th>
+      </tr>
+    </thead>
+  </table>
+</div>
 
-    <div class="col-xs-4">
-     <table>
-      <thead>
-       <tr>
-        <th><h3><%= link_to "ユーザー一覧", admin_end_users_path %></h3></th>
-        </tr>
-      </thead>
-     </table>
-    </div>
-   </div>
+<div class="col-xs-4">
+  <table>
+    <thead>
+      <tr>
+        <th><h2><%= link_to "ユーザー一覧", admin_end_users_path, :style => "color:black;" %></h2></th>
+      </tr>
+    </thead>
+  </table>
+</div>
