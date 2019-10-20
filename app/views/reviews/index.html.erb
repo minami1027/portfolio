@@ -8,7 +8,7 @@
             <% @test.each do |row| %>
                 <div class="row">
                     <div class="col-md-4">
-                        <%= attachment_image_tag row[1], :cocktail_image, :fill, 150, 150, fallback: "no_image.jpg", size:'150x150'  %>
+                        <%= attachment_image_tag row[1], :cocktail_image, :fill, 150, 150, fallback: "no_image.png", size:'150x150'  %>
                         <p class="index-font category-font"><%= link_to "レシピを見る", item_path(row[0].item_id) %></p>
                     </div>
 

@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 2019_10_14_095132) do
     t.string "user_name", null: false
     t.text "profile_image_id"
     t.integer "is_delete", default: 0, null: false
-    t.string "birth_date"
+    t.date "birth_date"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

@@ -11,25 +11,25 @@
 
   <body>
   <div class="wrapper">
-      <% if administrator_signed_in? %>
-        <%= render 'layouts/admin_header' %>
-      <% elsif user_signed_in? %>
-        <%= render 'layouts/login_header' %>
-      <% else %>
-        <%= render 'layouts/not_login_header' %>
-      <% end %>
+    <% if administrator_signed_in? %>
+      <%= render 'layouts/admin_header' %>
+    <% elsif user_signed_in? %>
+      <%= render 'layouts/login_header' %>
+    <% else %>
+      <%= render 'layouts/not_login_header' %>
+    <% end %>
 
+    <% if false %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-    <div class="container">
+    <% end %>
+
+    <div class="container-fluid p-0">
       <%= yield %>
     </div>
+  </div>
 
-    <% if user_signed_in? %>
-        <%= render 'layouts/footer' %>
-      <% else %>
-        <%= render 'layouts/not_login_footer' %>
-      <% end %>
+    <%= render 'layouts/footer' %>
   </div>
   </body>
 </html>

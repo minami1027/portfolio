@@ -62,7 +62,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # #追加Gem
-gem 'bootstrap-sass', '~> 3.4.1'
+gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'devise'

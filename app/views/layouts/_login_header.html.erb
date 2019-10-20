@@ -1,16 +1,18 @@
-<body>
-     <header class="navbar navbar-inverse navbar-position">
-        <div class="container">
-            <nav class='nav navbar-nav navbar-left' >
-                <h1><%= link_to " Boooooze!!! ", root_path,:style=>"color:white;"%></h1>
-            </nav>
-            <nav>
-            <ul class="nav navbar-nav navbar-right navbar-original">
+<header class="navbar navbar-inverse ">
+    <div class="container">
+        <nav class='nav navbar-nav navbar-left'>
+            <ul class="nav navbar-nav" style="width: 200px;">
+                <div class="title">
+                    <li class="header-li"><%= link_to " Boooooze!!! ", root_path,:style=>"color:white;"%></li>
+                </div>
+            </ul>
+        </nav>
+        <nav class='nav navbar-nav navbar-right'>
+            <ul class="nav navbar-nav navbar-original">
                 <li class="header-li"><%= link_to " マイページ ", user_path(current_user) ,:style => "color:white;"%></li>
                 <li class="header-li"><%= link_to " ログアウト ", destroy_user_session_path, method: :delete ,:style => "color:white;"%></li>
-                <li class="header-li" style="color:green"><%= current_user.user_name %> さんようこそ</li>
+                <li class="header-li"><a style="color:green"><%= current_user.user_name %> さんようこそ</a></li>
             </ul>
-            </nav>
-        </div>
-    </header>
-</body>
+        </nav>
+    </div>
+</header>

@@ -1,39 +1,42 @@
-<div class="notice">
-	<h1>マイページ</h1>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-3">
-      <%= attachment_image_tag @user, :profile_image, class: "img-circle profile-thumb", fallback: "no_image.jpg", size:'250x300'%>
-    </div>
-
-  　<div class="col-xs-6">
-      <h3 class="prof-n-kan">ニックネーム</h3>
-      <%= @user.user_name %>
-    </div>
-
-  　<div class="col-xs-6">
-      <h3 class="prof-introduction">自己紹介</h3>
-      <%= @user.introduction %>
-    </div>
+<div class="wrap">
+  <div class="notice">
+    <h1>マイページ</h1>
   </div>
-</div>
 
-<div class="row">
-  <div class="col-xs-6">
-      <h3 class="glyphicon glyphicon-list-alt" aria-hidden="true">
-      <%= link_to "コメント履歴", reviews_path ,:style => "color:black;"%></h3><br>
-      <h3 class="glyphicon glyphicon-heart-empty" aria-hidden="true">
-    	<%= link_to "お気に入りレシピ", favorites_path ,:style => "color:black;"%></h3>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3">
+        <%= attachment_image_tag @user, :profile_image, class: "img-circle profile-thumb", fallback: "no_image.png", size:'250x300'%>
       </div>
+
+    <div class="col-xs-6">
+        <h3 class="prof-n-kan">ニックネーム</h3>
+        <%= @user.user_name %>
+      </div>
+
+    <div class="col-xs-6">
+        <h3 class="prof-introduction">自己紹介</h3>
+        <%= @user.introduction %>
+      </div>
+    </div>
   </div>
 
-    <div class="prof-edit">
-    	<%= link_to "マイページ編集", edit_user_path ,:style=>"color:black;"%>
+  <div class="row">
+    <div class="col-xs-6">
+        <h3 class="glyphicon glyphicon-list-alt" aria-hidden="true">
+        <%= link_to "コメント履歴", reviews_path ,:style => "color:black;"%></h3><br>
+        <h3 class="glyphicon glyphicon-heart-empty" aria-hidden="true">
+        <%= link_to "お気に入りレシピ", favorites_path ,:style => "color:black;"%></h3>
+        </div>
     </div>
 
-    <div class="prof-remove">
-    	<%= link_to "退会する",  user_remove_path ,:style=>"color:black;"%>
+      <div class="prof-edit">
+        <%= link_to "マイページ編集", edit_user_path ,:style=>"color:black;"%>
+      </div>
+
+      <div class="prof-remove">
+        <%= link_to "退会する",  user_remove_path ,:style=>"color:black;"%>
+      </div>
     </div>
   </div>
+</div>

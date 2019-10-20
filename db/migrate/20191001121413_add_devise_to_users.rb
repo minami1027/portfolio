@@ -12,7 +12,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
       t.string :user_name, null: false
       t.text :profile_image_id
       t.integer :is_delete, null: false, default: 0
-      t.string :birth_date
+      t.date :birth_date
 
       ## Recoverable
       t.string   :reset_password_token

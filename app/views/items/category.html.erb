@@ -12,7 +12,7 @@
             <% @category.each do |category_item| %>
                 <div class="row">
                     <div class="col-md-4">
-                        <%= attachment_image_tag category_item, :cocktail_image, :fill, 150, 150, fallback: "no_image.jpg", size:'150x150'  %> <br>
+                        <%= attachment_image_tag category_item, :cocktail_image, :fill, 150, 150, fallback: "no_image.png", size:'150x150'  %> <br>
                         <p class="index-font category-font"><%= category_item.cocktail_name%></p>
                         <p class="index-font category-font"><%= link_to "レシピを見る", item_path(category_item.id) %></p>
                     </div>

@@ -1,16 +1,16 @@
-<div class="container">
+<div class="container wrap">
     <div class="row">
-        <div class="col-lg-6">
-            <%= attachment_image_tag @item, :cocktail_image, fallback: "no_image.jpg", size:'500x650'  %>
+        <div class="col-lg-5">
+            <%= attachment_image_tag @item, :cocktail_image, fallback: "no_image.png", size:'500x650'  %>
         </div>
 
-        <div class="col-lg-6">
+        <div class="col-lg-5">
             <h2>カクテル名:<%= @item.cocktail_name %></h2>
             <h2>度数:<%= @item.alcohol_content %></h2>
             <h2>味:<%= @item.cocktail_name %></h2>
             <h2>色:<%= @item.cocktail_color %></h2>
             <h2>製法:<%= @item.manufacturing_method %></h2>
-            <div class="col-md-8" id="iine_count">
+            <div class="col-md-5" id="iine_count">
                 <h2><%= @item.favorites.count %> いいね</h2>
             </div>
             <div id="iine-<%= @item.id %>">

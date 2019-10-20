@@ -83,10 +83,7 @@
         </div>
     </div>
 
-
-
-
-        <div class="row">
+    <div class="row">
         <div class="col-md-3">
             <svg xmlns="http://www.w3.org/2000/svg" width="37.225" height="59.769" viewBox="0 0 37.225 59.769">
             <g id="アートワーク_5" data-name="アートワーク 5" transform="translate(1 1)">
@@ -161,7 +158,7 @@
                 <div class="col-md-2 rank-item">
                     <p class="rank_<%= i %>"><%= i %></p>
                     <div class="rank-description">
-                        <%= attachment_image_tag rank_item, :cocktail_image, :fill, 100, 100, fallback: "no_image.jpg", size:'100x100' %>
+                        <%= attachment_image_tag rank_item, :cocktail_image, :fill, 100, 100, fallback: "no_image.png", size:'100x100' %>
                         <p class="rank-name"><%= link_to rank_item.item_name, item_path(rank_item) %></p>
                     </div>
                 </div>

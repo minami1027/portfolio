@@ -3,9 +3,12 @@
 <header class="navbar navbar-inverse navbar-position">
   <div class="container">
     <nav class='nav navbar-nav navbar-left' >
+        <ul class="nav navbar-nav" style="width: 200px;">
+        <div class="title">
       <h1><%= link_to " Boooooze!!! ", root_path,:style=>"color:white;"%></h1>
+      </div>
     </nav>
-    <nav>
+    <nav class='nav navbar-nav navbar-right'>
       <ul class="nav navbar-nav navbar-right navbar-original">
           <li class="header-li"><%= link_to " ログイン",new_user_session_path ,:style=>"color:white;"%></li>
           <li class="header-li"><%= link_to " 新規会員登録",new_user_registration_path ,:style=>"color:white;" %></li>

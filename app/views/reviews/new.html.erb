@@ -1,8 +1,9 @@
 <div class="row">
-    <h1>レビューページ</h1>
-<% @review.errors.full_messages.each do |mes | %>
-<%= mes%>
-<% end %>
+  <div class="col">
+      <h1>レビューページ</h1>
+  <% @review.errors.full_messages.each do |mes | %>
+  <%= mes%>
+  <% end %>
     <%= form_for(@review, url: reviews_path) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
 
@@ -19,4 +20,5 @@
     <%= f.hidden_field :item_id, :value => @item_id%>
 
 	<% end %>
+</div>
 </div>
