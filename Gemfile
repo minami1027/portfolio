@@ -73,3 +73,7 @@ gem 'ransack'   #検索機能
 gem 'cocoon'
 gem 'pry-rails'
 gem 'seed-fu'
+
+group :production do
+  gem 'mysql2'
+end
