@@ -1,17 +1,17 @@
 <div class="container wrap">
     <div class="row">
-        <div class="col-lg-5">
-            <%= attachment_image_tag @item, :cocktail_image, fallback: "no_image.png", size:'500x650'  %>
+        <div class="col-md-6 mt-5">
+            <%= attachment_image_tag @item, :cocktail_image, fallback: "no_image.png", size:'450x450'  %>
         </div>
 
-        <div class="col-lg-5">
-            <h2>カクテル名:<%= @item.cocktail_name %></h2>
-            <h2>度数:<%= @item.alcohol_content %></h2>
-            <h2>味:<%= @item.cocktail_name %></h2>
-            <h2>色:<%= @item.cocktail_color %></h2>
-            <h2>製法:<%= @item.manufacturing_method %></h2>
+        <div class="col-md-6 mt-5">
+            <h3>カクテル名:<%= @item.cocktail_name %></h3><br>
+            <h3>度数:<%= @item.alcohol_content %></h3><br>
+            <h3>味:<%= @item.cocktail_name %></h3><br>
+            <h3>色:<%= @item.cocktail_color %></h3><br>
+            <h3>製法:<%= @item.manufacturing_method %></h3><br>
             <div class="col-md-5" id="iine_count">
-                <h2><%= @item.favorites.count %> いいね</h2>
+                <h3><%= @item.favorites.count %> いいね</h3>
             </div>
             <div id="iine-<%= @item.id %>">
                 <% if user_signed_in? %>
@@ -28,8 +28,9 @@
     </div>
 
     <div class="row">
-        <div class="col-md-2"></div>
-            <h3><%= link_to "レビューする", new_review_path << "?item_id=#{@item.id}", class:"category-link" %></h3>
+        <div class="col-md-2">
+            <h3><%= link_to "レビューする", new_review_path << "?item_id=#{@item.id}", class:"btn btn-primary" %></h3>
+        </div>
     </div>
 
     <div class="row">

@@ -1,28 +1,29 @@
-<div class="row">
-    <h3>いいね一覧</h3>
-    <hr>
-    <% current_user.favorites.each do |fav| %>
-        <div class="col-md-offset-2">
-            <div class="row  favorite-border-item">
-                <div class="col-md-5">
-                    <%= attachment_image_tag fav.item, :cocktail_image,
-                        :fill, 170, 170,  fallback: "no_image.png", size:'170x170' %>
-                </div>
+<h3>いいね一覧</h3>
+<div class="container">
+    <div class="row">
+        <% current_user.favorites.each do |fav| %>
+            <%# <div class="col-md-offset-2"> %>
+                <div class="row  favorite-border-item">
+                    <div class="col-md-5">
+                        <%= attachment_image_tag fav.item, :cocktail_image,
+                            :fill, 170, 170,  fallback: "no_image.png", size:'170x170' %>
+                    </div>
 
-                <div class="col-md-5">
-                    <p class="index-font"><%= fav.item.cocktail_name %></p>
-                    <p class="index-font"><%= link_to '詳細を見る', item_path(fav.item) %>
-                    <div id="iine-<%= fav.item.id %>">
-                        <% #if user_signed_in? %>
-                        <% if current_user.iine?(fav.item) %>
-                            <%= render 'favorites/unfavorites', item: fav.item %>
-                        <% else %>
-                            <%= render 'favorites/favorites', item: fav.item %>
-                        <% end %>
-                    <%# end %>
+                    <div class="col-md-5">
+                        <p class="index-font"><%= fav.item.cocktail_name %></p>
+                        <p class="index-font"><%= link_to '詳細を見る', item_path(fav.item) %>
+                        <div id="iine-<%= fav.item.id %>">
+                            <% #if user_signed_in? %>
+                            <% if current_user.iine?(fav.item) %>
+                                <%= render 'favorites/unfavorites', item: fav.item %>
+                            <% else %>
+                                <%= render 'favorites/favorites', item: fav.item %>
+                            <% end %>
+                        <%# end %>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    <% end %>
+            <%# </div> %>
+        <% end %>
+    </div>
 </div>

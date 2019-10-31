@@ -5,37 +5,65 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-xs-3">
-        <%= attachment_image_tag @user, :profile_image, class: "img-circle profile-thumb", fallback: "no_image.png", size:'250x300'%>
-      </div>
-
-    <div class="col-xs-6">
-        <h3 class="prof-n-kan">ニックネーム</h3>
-        <%= @user.user_name %>
-      </div>
-
-    <div class="col-xs-6">
-        <h3 class="prof-introduction">自己紹介</h3>
-        <%= @user.introduction %>
+      <div class="col-xs-4">
+          <h3 class="prof-n-kan">ニックネーム</h3>
+          <%= @user.user_name %>
       </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-xs-6">
-        <h3 class="glyphicon glyphicon-list-alt" aria-hidden="true">
-        <%= link_to "コメント履歴", reviews_path ,:style => "color:black;"%></h3><br>
-        <h3 class="glyphicon glyphicon-heart-empty" aria-hidden="true">
-        <%= link_to "お気に入りレシピ", favorites_path ,:style => "color:black;"%></h3>
+    <div class="row">
+        <div class="col-xs-4">
+          <%= attachment_image_tag @user, :profile_image, class: "img-circle profile-thumb", fallback: "no_image.png", size:'250x300'%>
         </div>
+
+        <div class="col-xs-8">
+            <h3 class="prof-introduction">自己紹介</h3>
+            <%= @user.introduction %>
+        </div><br>
     </div>
 
-      <div class="prof-edit">
-        <%= link_to "マイページ編集", edit_user_path ,:style=>"color:black;"%>
-      </div>
+    <div class="row">
+      <div class="col-xs-4">
+          <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="19.427" height="18.821" viewBox="0 0 19.427 18.821">
+              <g id="アートワーク_14" data-name="アートワーク 14" transform="translate(9.713 9.411)">
+              <g id="グループ_30" data-name="グループ 30" transform="translate(-9.713 -9.411)">
+              <path id="パス_76" data-name="パス 76" d="M0,1.783V12.959a1.783,1.783,0,0,0,1.783,1.783H7.628l6.639,4.041a.274.274,0,0,0,.383-.359L12.74,14.739h4.9a1.783,1.783,0,0,0,1.783-1.783V1.783A1.783,1.783,0,0,0,17.644,0H1.783A1.783,1.783,0,0,0,0,1.783Zm1.362,0a.424.424,0,0,1,.421-.421H17.644a.424.424,0,0,1,.417.417v11.18a.424.424,0,0,1-.417.417H10.5l1.146,2.214L8.007,13.377H1.783a.424.424,0,0,1-.417-.417Z"/>
+              <g id="グループ_29" data-name="グループ 29" transform="translate(3.824 3.159)">
+              <path id="パス_77" data-name="パス 77" d="M112.587,93.973a.837.837,0,0,1,0-1.673h9.01a.837.837,0,0,1,0,1.673Z" transform="translate(-111.75 -92.3)"/>
+              <path id="パス_78" data-name="パス 78" d="M112.587,192.673a.837.837,0,1,1,0-1.673h10.1a.837.837,0,1,1,0,1.673Z" transform="translate(-111.75 -187.622)"/>
+              <path id="パス_79" data-name="パス 79" d="M112.587,291.173a.837.837,0,1,1,0-1.673h6.943a.837.837,0,1,1,0,1.673Z" transform="translate(-111.75 -282.752)"/>
+                </g>
+              </g>
+            </g>
+            </svg><%= link_to "コメント履歴", reviews_path ,:style => "color:black;"%></h3><br>
 
-      <div class="prof-remove">
-        <%= link_to "退会する",  user_remove_path ,:style=>"color:black;"%>
+          <h3>
+              <svg xmlns="http://www.w3.org/2000/svg" width="19.427" height="18.821" viewBox="0 0 19.427 18.821">
+              <g id="アートワーク_14" data-name="アートワーク 14" transform="translate(9.713 9.411)">
+              <g id="グループ_30" data-name="グループ 30" transform="translate(-9.713 -9.411)">
+              <path id="パス_76" data-name="パス 76" d="M0,1.783V12.959a1.783,1.783,0,0,0,1.783,1.783H7.628l6.639,4.041a.274.274,0,0,0,.383-.359L12.74,14.739h4.9a1.783,1.783,0,0,0,1.783-1.783V1.783A1.783,1.783,0,0,0,17.644,0H1.783A1.783,1.783,0,0,0,0,1.783Zm1.362,0a.424.424,0,0,1,.421-.421H17.644a.424.424,0,0,1,.417.417v11.18a.424.424,0,0,1-.417.417H10.5l1.146,2.214L8.007,13.377H1.783a.424.424,0,0,1-.417-.417Z"/>
+              <g id="グループ_29" data-name="グループ 29" transform="translate(3.824 3.159)">
+              <path id="パス_77" data-name="パス 77" d="M112.587,93.973a.837.837,0,0,1,0-1.673h9.01a.837.837,0,0,1,0,1.673Z" transform="translate(-111.75 -92.3)"/>
+              <path id="パス_78" data-name="パス 78" d="M112.587,192.673a.837.837,0,1,1,0-1.673h10.1a.837.837,0,1,1,0,1.673Z" transform="translate(-111.75 -187.622)"/>
+              <path id="パス_79" data-name="パス 79" d="M112.587,291.173a.837.837,0,1,1,0-1.673h6.943a.837.837,0,1,1,0,1.673Z" transform="translate(-111.75 -282.752)"/>
+                </g>
+              </g>
+            </g>
+            </svg>
+          <%= link_to "お気に入りレシピ", favorites_path ,:style => "color:black;"%></h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="edit">
+          <%= link_to "マイページ編集", edit_user_path , class:'btn btn-success', :style=>"color:black;"%>
+        </div>
+
+        <div class="remove">
+          <%= link_to "退会する",  user_remove_path , class:'btn btn-danger', :style=>"color:black;"%>
+        </div>
       </div>
     </div>
   </div>

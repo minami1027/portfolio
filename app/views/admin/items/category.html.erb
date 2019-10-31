@@ -1,10 +1,10 @@
 <div class="row background-category <%= @category %>">
     <div class="col-md-2">
-    <%= render 'layouts/category', roll: 'admin'%>
+        <%= render 'layouts/category', roll: 'admin'%>
     </div>
 
     <div class="col-md-10">
-    <h1><%= Category.find(params[:category_id])[:category_name] %>'s recommend</h1>
+    <h1><%= Category.find(params[:category_id])[:category_name] %>'ベース一覧</h1>
 
 <div class="container">
     <div class="row">
@@ -17,9 +17,9 @@
         <%#= category_item.attributes %>
         <div class="row"></div>
             <div class="col-md-4">
-                <%= attachment_image_tag category_item, :cocktail_image, :fill, 150, 150, fallback: "no_image.png", size:'150x150'  %> <br>
-                <p class="index-font category-font"><%= category_item.cocktail_name%></p>
-                <p class="index-font category-font"><%= link_to "詳細を見る", admin_item_path(category_item.id) %></p>
+                <%= attachment_image_tag category_item, :cocktail_image, fallback: "no_image.png", size:'200x250'  %> <br>
+                <p class="category-font"><%= category_item.cocktail_name%></p>
+                <p class="category-font2"><%= link_to "レシピを見る", admin_item_path(category_item.id) %></p>
             </div>
         </div>
        <% end %>

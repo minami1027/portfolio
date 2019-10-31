@@ -1,7 +1,7 @@
 class Admin::ItemsController < ApplicationController
     before_action :authenticate_administrator!
 
-    PER = 20
+    PER = 9
 
     def index
         # @items = Item.where(listing_stop: 0).page(params[:page]).per(PER)
@@ -30,7 +30,7 @@ class Admin::ItemsController < ApplicationController
 
     def create
         @item = Item.new(item_params)
-        if @item.save!
+        if @item.save
             redirect_to admin_item_url(@item)
         else
             render 'new'

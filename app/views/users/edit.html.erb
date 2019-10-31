@@ -40,11 +40,11 @@
   <div class="field">
     <%= f.label :確認用パスワード %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-detail" %>
-  </div>
+  </div><br>
 
   <div class="form-item">
     <%= f.label :introduction, "自己紹介文" %>
-    <%= f.text_field :introduction, class:"自己紹介" %>
+    <%= f.text_area :introduction, class:"自己紹介", row:10 %>
   </div>
 
   <div class="button-panel">

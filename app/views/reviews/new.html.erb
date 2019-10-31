@@ -1,24 +1,24 @@
 <div class="row">
   <div class="col">
       <h1>レビューページ</h1>
-  <% @review.errors.full_messages.each do |mes | %>
-  <%= mes%>
-  <% end %>
-    <%= form_for(@review, url: reviews_path) do |f| %>
-        <%= render 'shared/error_messages', object: f.object %>
+      <% @review.errors.full_messages.each do |mes | %>
+      <%= mes%>
+      <% end %>
+      <%= form_for(@review, url: reviews_path) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
 
-              <div class="row">
-                <div class="col-sm-12">
-                  <%= f.text_area :review, class:"form-control", rows:"10", placeholder:"コメントはここに" %>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <%= f.text_area :review, class:"form-control", rows:"10", placeholder:"コメントはここに" %>
+                  </div>
                 </div>
-              </div>
 
-        <div class="item-add-to">
-        <%= f.submit 'レビューする', class:"btn btn-primary" %>
-        </div>
+          <div class="item-add-to">
+          <%= f.submit 'レビューする', class:"btn btn-primary" %>
+          </div>
 
-    <%= f.hidden_field :item_id, :value => @item_id%>
+      <%= f.hidden_field :item_id, :value => @item_id%>
 
-	<% end %>
-</div>
+    <% end %>
+  </div>
 </div>
