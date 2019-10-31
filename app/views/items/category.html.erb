@@ -9,14 +9,14 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <% @category.each do |category_item| %>
-                <div class="row">
-                    <div class="col-md-4">
-                        <%= attachment_image_tag category_item, :cocktail_image, fallback: "no_image.png", size:'200x250'  %> <br>
-                        <p class="category-font"><%= category_item.cocktail_name%></p> <p class="category-font2"><%= link_to ">>レシピを見る", item_path(category_item.id) %></p>
-                    </div>
-                </div>
-            <% end %>
+            <div class="row">
+                <% @category.each do |category_item| %>
+                        <div class="col-md-4">
+                            <%= attachment_image_tag category_item, :cocktail_image, fallback: "no_image.png", size:'200x250'  %> <br>
+                            <p class="category-font"><%= category_item.cocktail_name%></p> <p class="category-font2"><%= link_to ">>レシピを見る", item_path(category_item.id) %></p>
+                        </div>
+                <% end %>
+            </div>
         </div>
     </div>
   <%= paginate @category %>
