@@ -1,24 +1,29 @@
-# README
+# Boooooze!!!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+***
 
-Things you may want to cover:
+## アプリケーションの概要
+カクテルレビューサイト
 
-* Ruby version
+***
 
-* System dependencies
+## アプリケーションの機能一覧
+- 会員登録機能/ログイン機能（gem:deviseを使用）
+- ログイン機能
+- 管理側：カクテル追加機能
+- ユーザー側：カクテルに対してコメントする機能
+- ユーザー側：カクテルをいいねする機能
 
-* Configuration
+***
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## アプリケーション内で使用した技術
+- インフラ
+  - AWS（EC2、RDS、S３）
+- データベース
+  - MySQL
+- サーバー
+  - Nginx
+- その他
+  - SSL通信の実装
+  - rbenvによるRubyのバージョン管理
+  - 自分のパソコン内でローカル開発するための環境構築
